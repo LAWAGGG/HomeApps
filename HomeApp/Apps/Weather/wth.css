@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>') 12 12, auto;
+}
+
+button, 
+a, 
+input[type="submit"],
+.btn {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="%2386CBFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>') 12 12, auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn{
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 55, 55);
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0 4px 0 rgb(142, 31, 31);
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 rgb(142, 31, 31);
+}
+
+.btn:active{
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 rgb(142, 31, 31);
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.541);
+    max-width: 500px;
+    width: 100%;
+    
+}
+
+.nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav input, .nav button {
+    border: none;
+    outline: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.nav input {
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.nav input:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.nav button {
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.nav button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    min-height: 200px;
+}
+
+.welcome-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.welcome-message i {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.welcome-message p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.image img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.temp {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.city {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.city p:last-child {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.hourlyForecast {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.hourlyItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    flex: 0 0 auto;
+}
+
+.hourlyItem img {
+    width: 40px;
+    height: 40px;
+}
+
+.hourlyForecast::-webkit-scrollbar {
+    height: 4px;
+}
+
+.hourlyForecast::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.hourlyForecast::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding: 0.5rem;
+        align-items: flex-start; /* Adjust alignment for mobile */
+    }
+
+    .Card {
+        max-width: none; /* Allow card to take full width on mobile */
+        border-radius: 12px;
+        padding: 0.75rem;
+        height: 100%;
+        display: flex;
+        
+    }
+
+    .nav input, .nav button {
+        padding: 0.5rem;
+        font-size: 1rem; /* Slightly larger for better touch targets */
+    }
+
+    .nav button {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .welcome-message {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .welcome-message i {
+        font-size: 2.5rem;
+    }
+
+    .welcome-message p {
+        font-size: 1rem;
+    }
+
+    .temp {
+        font-size: 3.5rem; /* Slightly smaller on mobile */
+    }
+
+    .city {
+        font-size: 1.25rem;
+    }
+
+    .hourlyForecast {
+        margin: 0 -0.75rem; /* Extend to edges */
+        padding: 0.5rem 0.75rem;
+    }
+
+    .hourlyItem {
+        min-width: 60px; /* Ensure items don't get too small */
+    }
+}
+
+/* For very small screens */
+/* ... (keep all existing styles until the mobile media query) ... */
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    .wrapper {
+        padding: 0.5rem;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .Card {
+        max-width: none;
+        border-radius: 12px;
+        padding: 1rem;
+        height: 90vh; /* Take up most of the viewport height */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav {
+        flex: 0 0 auto; /* Don't grow or shrink */
+        margin-bottom: 1rem;
+    }
+
+    .main {
+        flex: 1; /* Take up all available space */
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+        min-height: 0; /* Remove min-height constraint */
+    }
+
+    .welcome-message {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .weather-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
+    .image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .temp {
+        flex: 0 0 auto;
+        font-size: 4.5rem;
+        margin: 1rem 0;
+    }
+
+    .city {
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hourlyForecast {
+        flex: 0 0 auto; /* Don't grow or shrink */
+        margin: 0;
+        padding: 1rem 0;
+        justify-content: space-between;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hourlyItem {
+        min-width: 70px;
+        padding: 0.5rem;
+    }
+
+    .hourlyItem img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 768px) {
+    .Card {
+        padding: 1rem;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .temp {
+        font-size: 4rem;
+    }
+
+    .city {
+        font-size: 1.3rem;
+    }
+
+    .welcome-message i {
+        font-size: 3rem;
+    }
+
+    .welcome-message p {
+        font-size: 1.2rem;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        align-items: center;
+        padding: 1rem;
+    }
+}
+
