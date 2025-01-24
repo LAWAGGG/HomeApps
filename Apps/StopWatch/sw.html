@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="sw.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="back">
+            <a href="/index.html"><button id="esc">Back</button></a>
+        </div>
+        <div class="clock">
+            <div class="Stopwatch">
+                <div class="Time">
+                    <div class="count">
+                        <span id="time">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="set">
+                <button onclick="startStopwatch()">Start</button>
+                <button onclick="stopStopwatch()">Stop</button>
+                <button onclick="resetStopwatch()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="sw.js"></script>
+</body>
+</html>
